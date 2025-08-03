@@ -4,6 +4,7 @@ services:
   app:
     build: ./docker/ingestors/github
     environment:
+     - GITHUB_TOKEN=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
     volumes:
       - ./db.sqlite3:/app/db.sqlite3
   
