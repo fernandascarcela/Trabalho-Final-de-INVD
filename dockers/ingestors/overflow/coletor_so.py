@@ -7,13 +7,13 @@ from kafka import KafkaProducer
 # --- CONFIGURAÇÃO ---
 LINGUAGENS = ["python", "c++", "c", "java", "c#"]
 API_URL = "https://api.stackexchange.com/2.3/questions"
-SUA_API_KEY = "rl_Muzn2EgWr8gKwGMRb6iF3D9Be" 
+SUA_API_KEY = "rl_Muzn2EgWr8gKwGMRb6iF3D9Be" # Lembre-se de usar sua chave de API
 KAFKA_TOPIC = "stackoverflow_topic"
-
+# O endereço do Kafka será o nome do serviço no docker-compose
 KAFKA_SERVER = "kafka:9092"
 
 # --- PRODUTOR KAFKA ---
-# JSON
+# Configura o produtor para enviar mensagens JSON
 producer = KafkaProducer(
     bootstrap_servers=[KAFKA_SERVER],
     value_serializer=lambda v: json.dumps(v).encode('utf-8')
