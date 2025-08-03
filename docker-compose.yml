@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build: ./docker/ingestors/github
+    environment:
+    volumes:
+      - ./db.sqlite3:/app/db.sqlite3
+  
+  google_trends:
+    build: ./docker/ingestors/google_trends
+    volumes:
+      - ./data_lake/raw/google_trends:/app/data_lake/raw/google_trends

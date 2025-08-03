@@ -1,0 +1,1 @@
+0 * * * * cd/path/to/github-trends && docker compose run --rm app
